@@ -32,8 +32,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :groups_users
-- has_many :groups
-- has_many :comments
+- has_many :group
+- has_many :comment
 
 ## groupsテーブル
 
@@ -44,8 +44,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :groups_users
-- belongs_to :user
-
+- has_many :user
+- has_many :comment
 
 ## groups_usersテーブル
 
@@ -53,16 +53,10 @@ Things you may want to cover:
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
-|text|text||
-|image|text||
-|timestamp|timestamp||
-
 
 ### Association
 - belongs_to :group
 - belongs_to :user
-- belongs_to :comment
-
 
 ## commentsテーブル
 
@@ -75,6 +69,4 @@ Things you may want to cover:
 |group_id|integer|null: false|
 
 ### Association
-- has_many :group
-- belongs_to :user
-- belongs_to :group_user
+
