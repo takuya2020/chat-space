@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+.Wrapper{
+   display: flex;
+
+/*サイドバーのscssを以下に記述*/
+
+  .SideBar{ 
+    background-color: #253141;
+    width: 300px;
+    color: #fff;
+  
+    .LeftHeader{  
+      height: 100px;
+      align-items: center;
+      display: flex;
+      padding: 0 20px;
+  
+      .LeftHeader__list{
+        height: 20px;
+        width: 260px;
+        display: flex;
+        justify-content: space-between;
+
+        .LeftHeader__userName{
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .LeftHeader__iconList{
+          width: 60px;
+          display: flex;
+          justify-content: flex-end;
+          
+          &__Icon{
+            font-size: 13px;
+            color: #ffffff;
+            margin: 0px 0px 0px 5px;
+          }
+      
+
+          .LeftHeader__Icon{
+            font-size: 13px;
+            color: #ffffff;
+            text-align: -webkit-match-parent;
+          }
+        }
+      }  
+    }
+    i{
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .GroupList{
+      color: #ffffff bold;
+      background-color: #2f3e51;
+      height: calc(100% - 100px);
+      width: 300px;
+
+      .Group{
+        height: 91px;
+        width: 260px;
+        padding: 0px 20px;
+
+        .Group__name{ 
+          font-size: 15px;
+          padding: 20px 0px 0px 0px ;      
+        }
+  
+        .Group__message{
+          font-size: 11px;
+          padding: 5px 0px 0px 0px ;
+        }
+      }  
+    }
+    a{
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+    
+/*チャットのscssを以下に記述*/
+  .Chat{
+    background-color: #ffffff;
+    width: calc(100vw - 300px);     
+
+    .RightHeader{
+      background-color: #ffffff; 
+      height: 100px; 
+      width: calc(100vw - 300px);
+      border-bottom: 1px solid #eeeeee;
+      padding: 0px 40px;
+      display: flex;
+      justify-content: space-between;
+
+      .RightHeader__group{
+
+        .RightHeader__groupName{
+          font-size: 20px;
+          color: #333333;
+          margin: 35px 0px 15px 0px;
+        }  
+
+        .RightHeader__memberList{
+          font-size: 13px;
+          color: #999999;
+          display: flex;
+        } 
+
+          .RightHeader__member{
+            font-size: 13px;
+            color: #999999;
+          } 
+      }
+
+    .RightHeader__editButton{
+      height: 40px;
+      margin-top: 28px;
+      line-height: 40px;
+      padding: 0 20px;
+      font-size: 16px;
+      color: #38aef0;
+      border: 1px solid #38aef0;
+    }
+    }
+
+    .MessageField{
+      height: calc(100vh - 100px - 80px);
+      padding: 35px 40px 0;
+      background-color: #fafafa;
+      overflow: scroll;
+      box-sizing: border-box;
+
+      .MessageBox{
+        margin-bottom: 46px;
+
+        .MessageInfo{
+          display: flex;
+          
+          .MessageInfo__userName{
+            font-size: 16px;
+            color: #434A54;
+            font-weight: bold;             
+          }
+
+          .MessageInfo__date{
+            font-size: 12px;
+            color: #999;
+            padding-left: 10px;             
+          }
+
+        .Message{
+          margin-bottom: 12px;
+        }
+        }
+      }
+    }
+
+  .Footer{
+    background-color: #d2d2d2;
+    height: 80px;
+    width: calc(100vw - 300px);
+    box-sizing: border-box;
+    padding: 20px 50px 20px 40px;
+
+    .Form{
+        display: flex;
+        justify-content: space-between;
+
+      .Form__contents{
+        width:  100%;
+        background-color: #fff;
+        position: relative;
+
+        .Form__inputContent{
+          border: none;
+          height: 50px;
+          width: 100%;
+          padding: 0 45px 0 15px;
+        }
+
+        .Form__inputImage{
+          height: 50px;
+          position: absolute;
+          right: 10px;
+          
+            .far{
+              line-height: 50px;
+              font-size: 25px;
+            }
+
+            .Hidden{
+              display: none;
+            }
+        }
+
+      }
+      .Form__submit{
+        background-color: #38AEF0;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        height: 50px;
+        margin-left:  15px;
+        padding: 0 30px;
+      }
+    }   
+  }
+ }
+}
