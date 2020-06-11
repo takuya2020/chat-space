@@ -2,14 +2,14 @@
   .LeftHeader
     .LeftHeader__list
       %h3.LeftHeader__list__userName
-        a
+        = current_user.name  
       %ul.LeftHeader__list__iconList
         %li.LeftHeader__list__iconList__Icon
           = link_to "#" do
-            %i.fas.fa-edit 
+            = icon("fas", "edit") 
         %li.LeftHeader__list__iconList__Icon
-          = link_to "#" do
-            %i.fas.fa-cog        
+          = link_to edit_user_path(current_user) do
+            = icon("fas", "cog")        
   .GroupList
     .Group
       .Group__name
