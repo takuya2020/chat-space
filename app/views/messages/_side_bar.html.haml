@@ -5,7 +5,7 @@
         = current_user.name  
       %ul.LeftHeader__list__iconList
         %li.LeftHeader__list__iconList__Icon
-          = link_to new_group_path(current_user) do
+          = link_to new_group_path do
             = icon("fas", "edit") 
         %li.LeftHeader__list__iconList__Icon
           = link_to edit_user_path(current_user) do
@@ -13,11 +13,10 @@
   .GroupList
     - current_user.groups.each do |group|
       .Group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group__name
             = group.name
           .Group__message
-            メッセージはまだありません
-
+            = group.show_last_message
             
           

@@ -1,8 +1,10 @@
 = form_with model: group, local: true do |f|
-  .SettingGroupForm__errors
-    %h2 10件のエラーが発生しました
-    %ul
-      %li nameを入力してください
+  - if group.errors.any?
+    .SettingGroupForm__errors
+      %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - group.errors.full_messages.each do |message|
+          %li= message
   .SettingGroupForm__field
     .SettingGroupForm__leftField
       = f.label :name, "グループ名", class: 'SettingGroupForm__label'
