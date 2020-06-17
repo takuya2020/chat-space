@@ -70,3 +70,5 @@ gem 'carrierwave'
 
 # mini_magick
 gem 'mini_magick'
+
+gem 'jquery-rails'
