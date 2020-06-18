@@ -10,13 +10,9 @@
     .RightHeader__editButton
       = link_to edit_group_path(@group.id) do
         Edit        
-  .MessageField
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-        .MessageInfo__date  
-      .Message
-        = render @messages
+  .MessageField 
+    .Message
+      = render @messages
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
