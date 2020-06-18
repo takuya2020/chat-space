@@ -35312,3 +35312,279 @@ Processing by MessagesController#create as JSON
 Completed 200 OK in 1846ms (Views: 1789.2ms | ActiveRecord: 8.4ms | Allocations: 1515779)
 
 
+Started GET "/groups/12/messages" for ::1 at 2020-06-17 20:50:01 +0900
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 12 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:29:in `set_group'
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.haml:14
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 4 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 5 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 6 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 7 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 8 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 9 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 10 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 11 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 12 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  Rendered messages/_side_bar.html.haml (Duration: 51.9ms | Allocations: 21853)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `group_users` ON `users`.`id` = `group_users`.`user_id` WHERE `group_users`.`group_id` = 12[0m
+  ↳ app/views/messages/_main_chat.html.haml:8
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 12[0m
+  ↳ app/views/messages/_main_chat.html.haml:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.haml:19
+  Rendered collection of messages/_message.html.haml [1 times] (Duration: 6.0ms | Allocations: 3154)
+  Rendered messages/_main_chat.html.haml (Duration: 32.7ms | Allocations: 15406)
+  Rendered messages/index.html.haml within layouts/application (Duration: 92.0ms | Allocations: 41009)
+  Rendered layouts/_notifications.html.haml (Duration: 3.0ms | Allocations: 1713)
+Completed 200 OK in 2178ms (Views: 2068.8ms | ActiveRecord: 49.9ms | Allocations: 1544939)
+
+
+Started GET "/groups/1/messages" for ::1 at 2020-06-17 20:50:07 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:29:in `set_group'
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.haml:14
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 4 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 5 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 6 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 7 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 8 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 9 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 10 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 11 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  [1m[36mMessage Load (2.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 12 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:9:in `show_last_message'
+  Rendered messages/_side_bar.html.haml (Duration: 23.3ms | Allocations: 11934)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` INNER JOIN `group_users` ON `users`.`id` = `group_users`.`user_id` WHERE `group_users`.`group_id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.haml:8
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.haml:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.haml:19
+  Rendered collection of messages/_message.html.haml [10 times] (Duration: 1.3ms | Allocations: 804)
+  Rendered messages/_main_chat.html.haml (Duration: 7.5ms | Allocations: 4666)
+  Rendered messages/index.html.haml within layouts/application (Duration: 31.2ms | Allocations: 16759)
+  Rendered layouts/_notifications.html.haml (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 52ms (Views: 39.6ms | ActiveRecord: 7.0ms | Allocations: 36556)
+
+
+Started GET "/groups/1/edit" for ::1 at 2020-06-17 20:50:14 +0900
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/groups_controller.rb:21:in `edit'
+  Rendering groups/edit.html.haml within layouts/application
+  Rendered groups/_form.html.haml (Duration: 31.5ms | Allocations: 14617)
+  Rendered groups/edit.html.haml within layouts/application (Duration: 34.9ms | Allocations: 16548)
+  Rendered layouts/_notifications.html.haml (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 0.7ms | Allocations: 36859)
+
+
+Started GET "/users?keyword=a" for ::1 at 2020-06-17 20:50:20 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"a"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%a%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 11.2ms | Allocations: 834)
+Completed 200 OK in 18ms (Views: 5.6ms | ActiveRecord: 8.9ms | Allocations: 4736)
+
+
+Started GET "/users?keyword=as" for ::1 at 2020-06-17 20:50:21 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"as"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%as%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 2.0ms | Allocations: 740)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 3143)
+
+
+Started GET "/users?keyword=a" for ::1 at 2020-06-17 20:50:23 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"a"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%a%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 2.3ms | Allocations: 740)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 3176)
+
+
+Started GET "/users?keyword=" for ::1 at 2020-06-17 20:50:23 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  Rendered users/index.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2468)
+
+
+Started GET "/users?keyword=e" for ::1 at 2020-06-17 20:50:23 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"e"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%e%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 1.2ms | Allocations: 740)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 3141)
+
+
+Started GET "/users?keyword=" for ::1 at 2020-06-17 20:50:24 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  Rendered users/index.json.jbuilder (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 2298)
+
+
+Started GET "/users?keyword=a" for ::1 at 2020-06-17 20:50:25 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"a"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%a%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 2.0ms | Allocations: 740)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.9ms | Allocations: 3139)
+
+
+Started GET "/users?keyword=" for ::1 at 2020-06-17 20:50:28 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  Rendered users/index.json.jbuilder (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 2306)
+
+
+Started GET "/users?keyword=q" for ::1 at 2020-06-17 20:50:28 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"q"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%q%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 2.5ms | Allocations: 740)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.1ms | Allocations: 3137)
+
+
+Started GET "/users?keyword=" for ::1 at 2020-06-17 20:50:29 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  Rendered users/index.json.jbuilder (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 2304)
+
+
+Started GET "/users?keyword=w" for ::1 at 2020-06-17 20:50:30 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"w"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%w%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 2.0ms | Allocations: 740)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 3149)
+
+
+Started GET "/users?keyword=" for ::1 at 2020-06-17 20:51:22 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  Rendered users/index.json.jbuilder (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2304)
+
+
+Started GET "/users?keyword=d" for ::1 at 2020-06-17 20:51:23 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"d"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%d%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 1.3ms | Allocations: 740)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 3145)
+
+
+Started GET "/users?keyword=ds" for ::1 at 2020-06-17 20:51:24 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"ds"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%ds%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 1.2ms | Allocations: 740)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 3140)
+
+
+Started GET "/users?keyword=d" for ::1 at 2020-06-17 20:51:25 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"d"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%d%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 1.9ms | Allocations: 740)
+Completed 200 OK in 32ms (Views: 2.2ms | ActiveRecord: 0.8ms | Allocations: 3167)
+
+
+Started GET "/users?keyword=" for ::1 at 2020-06-17 20:51:26 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  Rendered users/index.json.jbuilder (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 2312)
+
+
+Started GET "/users?keyword=a" for ::1 at 2020-06-17 20:51:26 +0900
+Processing by UsersController#index as JSON
+  Parameters: {"keyword"=>"a"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (name LIKE '%a%') AND `users`.`id` != 1 LIMIT 10[0m
+  ↳ app/views/users/index.json.jbuilder:1
+  Rendered users/index.json.jbuilder (Duration: 1.1ms | Allocations: 740)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 3151)
+
+
